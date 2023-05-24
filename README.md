@@ -1,2 +1,2 @@
 # Werkel switch constructor
-React Constructor of frames and mechanisms for electrical switches and sockets.
+Constructor of frames and mechanisms for electrical switches and sockets. Build on React and Redux toolkit.
