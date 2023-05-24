@@ -1,0 +1,845 @@
+// Breakpoints for Media quires
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+#root {
+  width: 100%;
+  height: auto;
+}
+
+.constructor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: $xl) {
+    flex-wrap: nowrap;
+    column-gap: 21px;
+  }
+
+  &__sticky {
+    @media (min-width: $md) {
+      position: sticky;
+      top: 1px;
+    }
+  }
+
+  &__column {
+    width: 100%;
+
+    @media (min-width: $md) {
+      width: calc(50% - 10px);
+    }
+
+    &_view {
+      @media (min-width: $xl) {
+        flex: 1 0 auto;
+        width: 571px;
+      }
+    }
+
+    &_controllers {
+      @media (min-width: $xl) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__view,
+  &__controllers {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+  }
+
+  &__controllers {
+    margin-top: 20px;
+
+    @media (min-width: $md) {
+      margin-top: 7px;
+    }
+
+    @media (min-width: $xl) {
+      margin-top: 29px;
+    }
+  }
+
+  &__view {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+    height: auto;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 110%;
+    color: var(--bs-body-color);
+    letter-spacing: 0;
+
+    @media (min-width: 1200px) {
+      padding: 31px 0;
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+
+  &__pic {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: #f9f9f9;
+
+    &::before {
+      content: '';
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-bottom: 65.625%;
+
+      @media (min-width: $xl) {
+        padding-bottom: 56.044%;
+      }
+    }
+
+    &-background {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTcxIiBoZWlnaHQ9IjMyMCIgdmlld0JveD0iMCAwIDU3MSAzMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1NzEiIGhlaWdodD0iMzIwIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfOTZfMjQyMDEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfOTZfMjQyMDEiIHgxPSIyMjcuNzQ2IiB5MT0iNzciIHgyPSIzMjkuODc1IiB5Mj0iMzU0LjcwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNzY3Njc2IiBzdG9wLW9wYWNpdHk9IjAiLz4KPHN0b3Agc3RvcC1jb2xvcj0iIzU5NTk1OSIgc3RvcC1vcGFjaXR5PSIwIi8+CjxzdG9wIG9mZnNldD0iMC42NDU0NTYiIHN0b3AtY29sb3I9IiM0QjRCNEIiIHN0b3Atb3BhY2l0eT0iMC4xOCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2NTY1NjUiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==");
+      }
+    }
+
+    &-shadow {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 7px;
+      margin-left: -5px;
+      width: 69.065%;
+      height: auto;
+      background-color: rgba(0,0,0,0.6);
+      filter: blur(25px);
+
+      &::before {
+        content: '';
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 116%;
+
+        @media (min-width: $xl) {
+          padding-bottom: 109.095%;
+        }
+      }
+
+      @media (min-width: $xl) {
+        margin-top: 20px;
+        margin-left: -5px;
+        width: 71.9%;
+      } 
+    }
+
+    &-border,
+    &-device {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56.565%;
+      height: auto;
+
+      @media (min-width: $xl) {
+        width: 53.592%;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding-bottom: 100%;
+
+        @media (min-width: $xl) {
+          padding-bottom: 103.595%;
+        }
+      }
+
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+    }
+
+    &-background { z-index: 0; }
+    &-border     { z-index: 1; }
+    &-device     { z-index: 2; }
+  }
+
+  &__sign {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+
+      @media (min-width: $xl) {
+        margin-top: 40px;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &-body {
+      display: flex;
+      gap: 20px;
+      padding-top: 10px;
+
+      @media (min-width: $xl) {
+        align-items: flex-start;
+        padding-top: 20px;
+        gap: 40px;
+      }
+    }
+
+    &-desc {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      color: #212529;
+      letter-spacing: 0;
+      line-height: 20px;
+
+      @media (min-width: $xl) {
+        flex-direction: row;
+        column-gap: 47px;        
+      }
+
+      p, a {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: 15px;
+
+        @media (min-width: $xl) {
+          font-size: 16px;
+        }
+      }
+
+      a {
+        @media (min-width: $xl) {
+          &:hover {
+            span, mark {
+              color: var(--bs-primary);
+            }            
+          }
+        }
+      }
+
+      span, mark {
+        transition: color .1s linear;
+      }
+
+      mark {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 5px 0 0 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: 16px;
+        background-color: transparent;
+
+        del {
+          display: inline-block;
+          position: relative;
+          text-decoration: none;
+          margin-left: 7px;
+          color: #999;
+          font-weight: 300;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: calc(110%);
+            height: 1px;
+            margin-top: -1px;
+            background-color: rgba(0,0,0,.5);
+          }
+        }
+      }
+    }
+
+    &-pic {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 40px;
+      width: 40px;
+      margin-bottom: 10px;
+
+      @media (min-width: $xl) {
+        width: 71px;
+        height: 60px;
+        margin-bottom: 0;
+      }
+
+      img {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: contain;
+      }
+    }
+
+    &-btns {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 150px;
+
+      @media (min-width: $xl) {
+        flex-direction: row-reverse;
+        align-items: center;
+        column-gap: 10px;
+        width: 197px;
+      }
+
+      span {
+        display: block;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+
+        @media (min-width: $xl) {
+          flex: 1 0 auto;
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat!important;
+          background-position: center!important;
+          transition: opacity .1s linear;
+        }
+
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2031 12.0002L21.681 4.52153C21.8867 4.31565 22.0002 4.041 22.0005 3.74812C22.0005 3.45509 21.887 3.18011 21.681 2.97456L21.0257 2.31938C20.8196 2.11302 20.545 2 20.2518 2C19.9591 2 19.6845 2.11302 19.4785 2.31938L12.0006 9.79761L4.52234 2.31938C4.31664 2.11302 4.04184 2 3.74882 2C3.45613 2 3.18133 2.11302 2.97563 2.31938L2.32001 2.97456C1.89333 3.40126 1.89333 4.09531 2.32001 4.52153L9.79808 12.0002L2.32001 19.4786C2.11415 19.6848 2.00081 19.9595 2.00081 20.2524C2.00081 20.5452 2.11415 20.8199 2.32001 21.0259L2.97547 21.6811C3.18117 21.8873 3.45613 22.0005 3.74866 22.0005C4.04168 22.0005 4.31648 21.8873 4.52218 21.6811L12.0004 14.2027L19.4783 21.6811C19.6843 21.8873 19.959 22.0005 20.2517 22.0005H20.252C20.5448 22.0005 20.8195 21.8873 21.0255 21.6811L21.6808 21.0259C21.8865 20.8201 22 20.5452 22 20.2524C22 19.9595 21.8865 19.6848 21.6808 19.4788L14.2031 12.0002Z' fill='%23B1B1B1'/%3E%3C/svg%3E");
+          opacity: 1;
+        }
+
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2031 12.0002L21.681 4.52153C21.8867 4.31565 22.0002 4.041 22.0005 3.74812C22.0005 3.45509 21.887 3.18011 21.681 2.97456L21.0257 2.31938C20.8196 2.11302 20.545 2 20.2518 2C19.9591 2 19.6845 2.11302 19.4785 2.31938L12.0006 9.79761L4.52234 2.31938C4.31664 2.11302 4.04184 2 3.74882 2C3.45613 2 3.18133 2.11302 2.97563 2.31938L2.32001 2.97456C1.89333 3.40126 1.89333 4.09531 2.32001 4.52153L9.79808 12.0002L2.32001 19.4786C2.11415 19.6848 2.00081 19.9595 2.00081 20.2524C2.00081 20.5452 2.11415 20.8199 2.32001 21.0259L2.97547 21.6811C3.18117 21.8873 3.45613 22.0005 3.74866 22.0005C4.04168 22.0005 4.31648 21.8873 4.52218 21.6811L12.0004 14.2027L19.4783 21.6811C19.6843 21.8873 19.959 22.0005 20.2517 22.0005H20.252C20.5448 22.0005 20.8195 21.8873 21.0255 21.6811L21.6808 21.0259C21.8865 20.8201 22 20.5452 22 20.2524C22 19.9595 21.8865 19.6848 21.6808 19.4788L14.2031 12.0002Z' fill='%23505050'/%3E%3C/svg%3E");
+          opacity: 0;
+        }
+
+        &:hover {
+          &::before { opacity: 0; }
+          &::after { opacity: 1; }
+        }
+      }
+
+      form {
+        width: 100%;
+
+        button {
+          width: 100%;
+          color: var(--bs-white) !important;
+          transition: all .1s linear;
+
+          &:focus {
+            background-color: var(--bs-green);
+            border-color: var(--bs-green);
+          }
+
+          &:hover {
+            background-color: #75b831 !important;
+            border-color: #6db425 !important;
+          }
+        }
+      }
+    }
+
+    &-placeholder {
+      padding: 20px 0 10px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #212529;
+
+      @media (min-width: $xl) {
+        margin: 0;
+        padding: 20px 0 0;
+        font-size: 16px;
+        text-align: left;
+      }
+    }
+
+    h3 {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 13px 20px 12px 0;     
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      color: var(--bs-body-color);
+      border-bottom: 1px solid #b4b4b4;
+
+      @media (min-width: $xl) {
+        font-size: 24px;
+        line-height: 25px;
+        padding: 0 0 10px 0;
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    margin: 0 0 14px;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+
+    @media (min-width: $xl) {
+      margin-bottom: 20px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      text-align: center;
+      cursor: pointer;
+      color: var(--bs-body-color);
+
+      @media (min-width: $xl) {
+        padding: 13px 20px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: -2px;
+        height: 3px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: #de5617;
+        border-radius: 999px;
+        transition: .3s;
+        opacity: 0;
+        width: 0;
+      }
+
+      &.active {
+        &::after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__drops {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 210px;
+
+    @media (min-width: $xl) {
+      min-height: 320px;    
+    }
+  }
+
+  &__content {
+    display: none;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+
+    &.active {
+      display: flex;
+    }
+
+    &_background {
+      .constructor__section {
+        gap: 10px;
+      }
+
+      .constructor__item {
+        width: calc((100% - 10px * 2) / 3);
+        padding: 0 !important;
+        cursor: pointer !important;
+        
+        img {
+          transform: none !important;
+          object-fit: cover;
+        }
+
+        &.active {
+          &::after {
+            opacity: 1;
+          }
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          box-shadow: inset 0 0 0 2px #de5617;
+          opacity: 0;
+          transition: all 0.1s linear;
+
+          @media (min-width: $xl) {
+            box-shadow: inset 0 0 0 3px #de5617;
+          }
+        }
+
+        @media (min-width: $lg) {
+          &:hover {
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+
+    h3 {
+      display: block;
+      margin-bottom: -10px !important;
+      width: 100%;
+      margin: 0;
+      padding: 0 20px 0 0;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: var(--bs-body-color);
+
+      @media (min-width: $xl) {
+        padding: 13px 20px;
+        font-size: 24px;
+        line-height: 25px;
+        letter-spacing: 0.01em;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc((100% - 20px) / 2);
+    height: auto;
+    cursor: pointer;
+
+    &.active {
+      cursor: default;
+      h4 { color: #de5617; }
+      img { transform: none !important; }
+    }
+
+    @media (min-width: $xl) {
+      width: calc((100% - (20px * 3)) / 4) !important;
+      padding: 0 5.5px;
+
+      &:hover {
+        img {
+          transform: scale(1.0625);
+        }
+      }
+    }
+
+    p {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(110deg, #f9f9f9 10%, #fff 20%, #f9f9f9 30%);
+      background-size: 200% 100%;
+      animation: 1.5s shine linear infinite;
+
+      &::before {
+        content: '';
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 100%;
+      }
+
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: all .1s ease-out;
+        z-index: 0;
+        background-color: white;
+        opacity: 0;
+      }
+
+      img.invisible {
+        z-index: -1;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        opacity: 0 !important;
+      }
+
+      &.loaded {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    h4 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      margin: 10px 0 0 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: #212529;
+      text-align: center;
+      transition: color .1s linear;
+      z-index: 1;
+
+      @media (min-width: $lg) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__button {
+    color: white !important;
+  }
+
+  .custom-scroll-vertical {
+    //- Стили для firefox
+    scrollbar-color: #bbb transparent;
+    scrollbar-width: thin;
+
+    //- скроллбар
+    &::-webkit-scrollbar {
+      width: 9px;
+      height: 0;
+      background: #f5f5f5;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    //- кнопки управления полузунком и скроллом
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    //- Цвет дорожки, по которой двигается бегунок прокрутки.
+    &::-webkit-scrollbar-track {
+      background: #f3f3f3;
+      border-radius: 5px;
+    }
+
+    //- видимая часть трека
+    // &::-webkit-scrollbar-track-piece {
+    // }
+
+    //- Цвет бегунка полосы, а так же его закругление.
+    &::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #bbb;
+        }
+    }
+
+    //- уголоки на кнопках уаправления ползунком
+    &::-webkit-scrollbar-corner {
+        display: none;
+    }
+
+    //- Основная ширина полосы прокрутки.
+    // &::-webkit-resizer {
+    // }
+  }
+
+  .placeholder-image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjkwIiBoZWlnaHQ9IjY5MCIgdmlld0JveD0iMCAwIDY5MCA2OTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MzguNzUgMjQwLjgzM0gyNTEuMjVDMjQ4LjQ4NyAyNDAuODMzIDI0NS44MzggMjQxLjkzMSAyNDMuODg0IDI0My44ODRDMjQxLjkzMSAyNDUuODM4IDI0MC44MzMgMjQ4LjQ4NyAyNDAuODMzIDI1MS4yNVY0MzguNzVDMjQwLjgzMyA0NDEuNTEzIDI0MS45MzEgNDQ0LjE2MiAyNDMuODg0IDQ0Ni4xMTZDMjQ1LjgzOCA0NDguMDY5IDI0OC40ODcgNDQ5LjE2NyAyNTEuMjUgNDQ5LjE2N0g0MzguNzVDNDQxLjUxMyA0NDkuMTY3IDQ0NC4xNjIgNDQ4LjA2OSA0NDYuMTE2IDQ0Ni4xMTZDNDQ4LjA2OSA0NDQuMTYyIDQ0OS4xNjcgNDQxLjUxMyA0NDkuMTY3IDQzOC43NVYyNTEuMjVDNDQ5LjE2NyAyNDguNDg3IDQ0OC4wNjkgMjQ1LjgzOCA0NDYuMTE2IDI0My44ODRDNDQ0LjE2MiAyNDEuOTMxIDQ0MS41MTMgMjQwLjgzMyA0MzguNzUgMjQwLjgzM1pNNDI4LjMzMyAzNjUuODMzTDM5Ny4wODMgMzM0LjU4M0wzNDUgMzg2LjY2N0wzMjQuMTY3IDM2NS44MzNMMjYxLjY2NyA0MjguMzMzVjI2MS42NjdINDI4LjMzM1YzNjUuODMzWk0yODIuNSAzMDguNTQyQzI4Mi41IDMwMy4zOTEgMjg0LjAyNyAyOTguMzU2IDI4Ni44ODkgMjk0LjA3NEMyODkuNzUgMjg5Ljc5MSAyOTMuODE3IDI4Ni40NTMgMjk4LjU3NiAyODQuNDgyQzMwMy4zMzQgMjgyLjUxMSAzMDguNTcxIDI4MS45OTYgMzEzLjYyMiAyODNDMzE4LjY3NCAyODQuMDA1IDMyMy4zMTQgMjg2LjQ4NSAzMjYuOTU2IDI5MC4xMjdDMzMwLjU5OCAyOTMuNzY5IDMzMy4wNzggMjk4LjQxIDMzNC4wODMgMzAzLjQ2MUMzMzUuMDg4IDMwOC41MTMgMzM0LjU3MiAzMTMuNzQ5IDMzMi42MDEgMzE4LjUwN0MzMzAuNjMgMzIzLjI2NiAzMjcuMjkyIDMyNy4zMzMgMzIzLjAxIDMzMC4xOTVDMzE4LjcyNyAzMzMuMDU2IDMxMy42OTIgMzM0LjU4MyAzMDguNTQyIDMzNC41ODNDMzAxLjYzNSAzMzQuNTgzIDI5NS4wMTEgMzMxLjg0IDI5MC4xMjcgMzI2Ljk1NkMyODUuMjQ0IDMyMi4wNzIgMjgyLjUgMzE1LjQ0OCAyODIuNSAzMDguNTQyWiIgZmlsbD0iI0U5RTlFOSIvPgo8L3N2Zz4K");
+    background-color: #f9f9f9;
+
+    &::before {
+      content: '';
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-bottom: 65.625%;
+
+      @media (min-width: $xl) {
+        padding-bottom: 56.044%;
+      }
+    }
+  }
+
+  .preloader {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: swiper-preloader-spin 1s infinite linear;
+    border: 5px solid #2399e2;
+    border-radius: 50%;
+    border-top-color: transparent;
+  }
+
+  @keyframes swiper-preloader-spin {
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg)
+    }
+  }
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+}
