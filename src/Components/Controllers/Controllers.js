@@ -9,9 +9,8 @@ const Controllers = () => {
   return(
     <div className="constructor__column constructor__column_controllers">
       <div className="constructor__controllers">
-        <NavTabs activeTab={activeTab} 
-          handleTabClick={setActiveTab} />
-        <NavItems activeTab={activeTab} />        
+        <NavTabs activeTab={activeTab} handleTabClick={setActiveTab} />
+        <NavItems activeTab={activeTab} />
       </div>
     </div>
   );

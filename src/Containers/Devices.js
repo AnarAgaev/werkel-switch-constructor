@@ -22,18 +22,18 @@ const Devices = ({isActive, arrDevices}) => {
   const data = useSelector((state) => state.data.devices)
 
   let fragments = decompositionArrItems(arrDevices);
-  let devicesLists = []; 
+  let devicesLists = [];
 
   for (const key in fragments) {
     const items = fragments[key]
-      .map(item => <DevicesItem key={item.key} item={item} 
+      .map(item => <DevicesItem key={item.key} item={item}
         handleClick={(id) => handleClick(dispatch, data, item.id)} />);
-      
+
     devicesLists.push(<SectionList key={key} title={key} items={items} />);
   }
 
-  const clazz = isActive 
-    ? 'constructor__content active' 
+  const clazz = isActive
+    ? 'constructor__content active'
     : 'constructor__content';
 
   return(

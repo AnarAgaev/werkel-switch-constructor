@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const orderSlice = createSlice({
-  
+
   name: 'order',
-  
+
   initialState: {
     border: {},
     device: {},
     background: {}
   },
-  
+
   reducers: {
     setBorder(state, action) {
       const border = {...action.payload}
@@ -48,7 +48,7 @@ const orderSlice = createSlice({
   }
 });
 
-export const {setBorder, setDevice, setBackground, 
+export const {setBorder, setDevice, setBackground,
   removeBorder, removeDevice, removeBackground } = orderSlice.actions;
 
 export default orderSlice.reducer;

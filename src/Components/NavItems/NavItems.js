@@ -8,7 +8,7 @@ import Devices from '../../Containers/Devices';
 import Preloader from '../Preloader/Preloader';
 
 const NavItems = ({activeTab}) => {
-  
+
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.data);
@@ -21,8 +21,8 @@ const NavItems = ({activeTab}) => {
     compositions: activeTab === 'compositions',
   }
 
-  const isLoaded = data.borders 
-    || data.devices 
+  const isLoaded = data.borders
+    || data.devices
     || data.backgrouns;
 
   useEffect((state) => {
@@ -32,9 +32,8 @@ const NavItems = ({activeTab}) => {
     let thereIsBackInRequest = false;
 
     const fetchData = async () => {
-      // const response = await fetch('https://dev16.massive.ru/rest/product/constructor');
-      // const response = await fetch('constructor.json');  
-      const response = await fetch('constructor-data.json');  
+      // const response = await fetch('constructor-data.json');
+      const response = await fetch('local.json');
       const data = await response.json();
 
       if (order.border) {
@@ -83,7 +82,9 @@ const NavItems = ({activeTab}) => {
 
       dispatch(initData(data));
     }
-    fetchData().catch((error) => console.log(error));    
+
+    fetchData().catch((error) => console.log(error));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return(
@@ -92,13 +93,13 @@ const NavItems = ({activeTab}) => {
         isLoaded.length === 0
           ? <Preloader />
           : <>
-              <Borders isActive={isActive.borders} 
+              <Borders isActive={isActive.borders}
                 arrBorders={data.borders} />
 
               <Devices isActive={isActive.devices}
                 arrDevices={data.devices} />
 
-              <Backgrounds isActive={isActive.backgrouns} 
+              <Backgrounds isActive={isActive.backgrouns}
                 arrBackgrounds={data.backgrounds} />
             </>
       }

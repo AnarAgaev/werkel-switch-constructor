@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component {
       return <h2>Что-то пошло не так.</h2>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 

@@ -24,11 +24,11 @@ const Backgrounds = ({isActive, arrBackgrounds}) => {
   const selectedBackground = useSelector((state) => state.order.background);
   const dispatch = useDispatch();
 
-  const items = arrBackgrounds.map((item) => <BackgroundsItem key={item.id} item={item} 
+  const items = arrBackgrounds.map((item) => <BackgroundsItem key={item.id} item={item}
     handleClick={() => handleClick(dispatch, backgrounds, item.id, selectedBackground)} />);
 
-  const clazz = isActive 
-    ? 'constructor__content constructor__content_background active' 
+  const clazz = isActive
+    ? 'constructor__content constructor__content_background active'
     : 'constructor__content constructor__content_background';
 
   return(

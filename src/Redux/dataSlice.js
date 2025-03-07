@@ -60,7 +60,7 @@ const dataSlice = createSlice({
   }
 });
 
-export const {initData, activeBorder, inactiveBorder, inactiveDevice, 
+export const {initData, activeBorder, inactiveBorder, inactiveDevice,
   inactiveBackground, activeBackground, activeDevice } = dataSlice.actions;
 
 export default dataSlice.reducer;

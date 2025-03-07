@@ -11,8 +11,8 @@ const OrderView = () => {
         <div className="constructor__view">
           <Views order={order} />
         </div>
-      </div>            
-    </div>    
+      </div>
+    </div>
   );
 }
 

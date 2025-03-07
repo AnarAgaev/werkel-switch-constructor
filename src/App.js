@@ -4,7 +4,7 @@ import OrderView from './Containers/OrderView';
 function App() {
   return (
     <section className='constructor'>
-      <OrderView />       
+      <OrderView />
       <Controllers />
     </section>
   );
