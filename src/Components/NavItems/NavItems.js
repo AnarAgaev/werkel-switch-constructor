@@ -32,8 +32,15 @@ const NavItems = ({activeTab}) => {
     let thereIsBackInRequest = false;
 
     const fetchData = async () => {
-      // const response = await fetch('constructor-data.json');
-      const response = await fetch('local.json');
+
+      const link = window.constructorSourceDataLink
+
+      if (!link) {
+        throw new Error("На странице не указана ссылка на API данных для конфигуратора: window.constructorSourceDataLink");
+      }
+
+      // const response = await fetch('local.json');
+      const response = await fetch(link);
       const data = await response.json();
 
       if (order.border) {
@@ -83,7 +90,9 @@ const NavItems = ({activeTab}) => {
       dispatch(initData(data));
     }
 
-    fetchData().catch((error) => console.log(error));
+    fetchData().catch((error) => {
+      throw new Error(error);
+    });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
